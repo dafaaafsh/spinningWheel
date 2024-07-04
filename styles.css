@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Luckiest Guy';
+}
+
+body{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #ffe605;
+    background-size: cover;
+}
+
+.main{
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+h2{
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;    
+}
+
+h2 .s1{
+    animation: changeColor1 1s infinite;
+    position: relative;
+}
+
+h2 .s2{
+    animation: changeColor2 1s infinite;
+    position: relative;
+}
+
+@keyframes changeColor1 {
+    0% {
+        color: #8d0000;
+    }
+    25%{
+        color: brown;
+    }
+    50% {
+        color: #070044
+    }
+    75% {
+        color: #15b600;
+    }
+    100%{
+        color: #8d0000;
+    }
+}
+
+@keyframes changeColor2 {
+    0% {
+        color: #8d002f;
+    }
+    25%{
+        color: rgb(42, 157, 165);
+    }
+    50% {
+        color: #21b93a
+    }
+    75% {
+        color: #494503;
+    }
+    100%{
+        color: #8d002f;
+    }
+}
+
+.wheel{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    overflow: hidden;
+    transition: all ease 1s;
+    font-weight: 200;
+    margin-bottom: 3rem;
+}
+
+span{
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    position: absolute;
+}
+
+.span1{
+    clip-path: polygon(0 92%, 100% 50%, 0 8%);
+    background-color: #ff1f1f;
+    top: 120px;
+    left: 0;
+}
+.span2{
+    clip-path: polygon(100% 92%, 0% 50%, 100% 8%);
+    background-color: #19e3cf;
+    top: 120px;
+    right: 0;
+}
+
+.span3{
+    clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+    background-color: #9e0bf3;
+    bottom: 0;
+    left: 120px;
+}
+
+.span4{
+    clip-path: polygon(50% 100%, 92% 0%, 8% 0%);
+    background-color: #15b600;
+    top: 0;
+    left: 120px;
+}
+
+.span5{
+    clip-path: polygon(0% 40%, 100% 0%, 60% 100%);
+    background-color: #15b600;
+    bottom: -2px;
+    left: -2px;
+}
+
+.span6{
+    clip-path: polygon(40% 100%, 0% 0%, 100% 40%);
+    background-color: #ff5a5a;
+    bottom: -2px;
+    right: -2px;
+}
+
+.span7{
+    clip-path: polygon(60% 0%, 100% 100%, 0% 60%);
+    background-color: #57fff1;
+    top: -2px;
+    left: -2px;
+}
+
+.span8{
+    clip-path: polygon(0% 100%, 100% 60%, 40% 0%);
+    background-color: #ff9612;
+    top: -2px;
+    right: -2px;
+}
+
+span p{
+    width: 65px;
+    height: 65px;
+    font-size: 60px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn{
+    position: absolute;
+    top: 63%;
+    left: 43%;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: solid 2px #fff;
+    background-color: #fa4700;
+    color: #fff;
+    box-shadow: 0 0 30px #000;
+    font-weight: 600;
+    font-size: 22px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+.selected{    
+    clip-path: polygon(50% 70%, 55% 50%, 45% 50%);
+    background-color: #000;
+    top: 0;
+    left: 25%;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale3d(1,1,1);
+    }
+    50% {
+        transform: scale3d(1.09,1.09,1.09);
+    }
+    100% {
+        transform: matrix3d(1,1,1);
+    }
+}
+
+.btn:hover{
+    background-color: #d13b00;
+}
